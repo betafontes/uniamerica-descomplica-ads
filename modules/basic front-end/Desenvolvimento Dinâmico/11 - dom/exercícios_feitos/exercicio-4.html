@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando a Manipulação do DOM - Exercício 4</title>
+</head>
+
+<body>
+    <!-- Cria uma lista dinâmica de times de futebol utlizando o HTML ao lado.
+    Sendo que cada elemento da lista deve ter uma borda azul. -->
+
+    <ul class="listatime">
+    </ul>
+    
+</body>
+
+<script>
+    times = ["Real Madrid", "Barcelona", "Juventus", "Atletico"];
+
+    var listadetimes = document.querySelector('ul.listatime');
+
+    for (var i = 0; i < times.length; i++) {
+        var time = times[i];
+        var listItem = document.createElement('li');
+        listItem.innerText = time;
+        listItem.style.border = '1px solid blue';
+
+        listadetimes.appendChild(listItem);
+    }
+</script>
+</html>

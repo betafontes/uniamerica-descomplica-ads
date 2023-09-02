@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando a Manipulação do DOM - Exercício 3</title>
+</head>
+
+<body>
+    <!-- Com base no HTML a seguir, coloque todos os elementos que tem a class estilo
+    com fundo azul, letra branca e todas as letras em maiúsculo. -->
+
+    <div class="estilo">div com estilo</div>
+    <div class="estilo">div com estilo 2</div>
+
+    <p class="estilo">elemento p com estilo</p>
+    <p>Isso é <span class="class">elemento span</span>dentro de um paragrafo</p>
+</body>
+
+<script>
+    const listaEstilo = document.querySelectorAll(".estilo");
+
+    for(i = 0; i < listaEstilo.length; i++) {
+        listaEstilo[i].style.backgroundColor = "blue";
+        listaEstilo[i].style.color = "white";
+        listaEstilo[i].innerText = listaEstilo[i].innerText.toUpperCase();
+    }
+</script>
+</html>

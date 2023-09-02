@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando a Manipulação do DOM - Pratica 2</title>
+</head>
+
+<body>
+    <!-- Usando e Manipulando os elementos html - Exemplos alternativos -->
+
+    <h1>Usando seletor do DOM</h1>
+
+    <ul>
+        <li>Linguagem Java</li>
+        <li>Linguagem JavaScript</li>
+        <li>Linguagem Python</li>
+    </ul>
+
+    <div id="conteudo" name="divconteudo" class="mensagem"></div>
+    <div name="divconteudo" class="mensagem"></div>
+    <div name="divconteudo" class="mensagem"></div>
+
+    <div class="mensagem"></div>
+
+    <span id="novospan" class="novo">Texto alternativo</span>
+</body>
+
+
+<script>
+    // mudando as cores dos elementos
+    elemento0 = document.getElementsByTagName('li')[0];
+    elemento0.style.color = 'red';
+
+    elemento1 = document.getElementsByTagName('li')[1];
+    elemento1.style.background = 'yellow';
+
+    elemento2 = document.getElementsByTagName("li")[2];
+    elemento2.innerText = "NodeJS";
+
+
+    // colocando o conteúdo dentro das divs e manipulando elas
+    elementoDiv = document.getElementById("conteudo");
+    elementoDiv.innerHTML = "<h3>Estou colocando a tag h3 dentro da div</h3>"
+
+    elementoDivName = document.getElementsByName("divconteudo")[1];
+    elementoDivName.style.color = 'pink';
+    elementoDivName.innerText = "Estou colocando um texto";
+
+    elementoDivClass = document.getElementsByClassName("mensagem")[2];
+    elementoDivClass.innerHTML = "<h3>Estou colocando a tag h3 dentro da div 2</h3>"
+
+    // utilizando outro seletor e mudando a cor da classe
+    elementoSpamClass = document.querySelector(".novo");
+    elementoSpamClass.style.color = "yellow";
+
+    // pegando todos os elementos que tem a classe .mensagem
+    elementoSeletor = document.querySelectorAll(".mensagem")[3];
+    elementoSeletor.innerHTML = "<p>Texto em paragrafo incluido</p>"
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando a Manipulação do DOM - Pratica 4</title>
+</head>
+
+<body>
+    <!-- Praticando o método Evento na manipulação de DOM -->
+
+    <!-- evento de passar o mouse sob o texto -->
+    <h1 id="exemplo" onmouseover="passarMousePorCima()" onmouseout="tirarMouse()">Troca de texto 1</h1>
+
+
+    <!-- ação do botão quando clicar-->
+    <p>Clique no botão a seguir e veja o resultado!</p>
+
+    <form>
+        <input type="button" onclick="exemploEvento()" value="Apresentar"/>
+    </form>
+</body>
+
+<script>
+    // Manipulando o método over para a troca de texto 
+    function passarMousePorCima() {
+        var elemento = document.getElementById("exemplo").innerHTML = "Troca de texto 2";
+    }
+
+    function tirarMouse() {
+        document.getElementById("exemplo").innerHTML = "Evento mouseout concluído";
+    }
+
+
+    // mostrando o evento do botão quando clicar
+    function exemploEvento() {
+        alert('mostrando o alert');
+    }
+</script>
+</html>

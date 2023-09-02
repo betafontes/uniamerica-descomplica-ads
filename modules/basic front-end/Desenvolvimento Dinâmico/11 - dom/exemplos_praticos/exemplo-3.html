@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando a Manipulação do DOM - Pratica 3</title>
+</head>
+
+<body>
+    <!-- Exemplos dinâmicamentes do DOM 
+        - criando elementos do zero dentro do body;
+        - adicionando os li dentro da lista.
+    -->
+
+    <ul id="lista">
+        <li>Produtos</li>
+    </ul>
+</body>
+
+<script>
+    var elemento = document.createElement("div");
+
+    elemento.innerText = "Incluíndo esse texto na div";
+    elemento.style.backgroundColor = "lightgreen";
+    document.body.append(elemento); // esse método adiciona o elemento que eu criei no body
+
+
+    // criando os itens dentro da lista
+    var lista = document.getElementById("lista");
+    var li = document.createElement("li");
+
+    li.textContent = "Quem Somos";
+    lista.appendChild(li); // adicionando mais um li "filho" na lista
+</script>
+</html>

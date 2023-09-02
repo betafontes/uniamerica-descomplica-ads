@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando a Manipulação do DOM - Pratica 1</title>
+</head>
+
+<body>
+    <button onclick="confirma()">Excluir Item</button>
+</body>
+
+<script>
+    /* Fazendo uma função para o método confirm do DOM */
+
+    function confirma() {
+        let confirmacao = confirm("Você deseja excluir esse item?");
+
+        if (confirmacao) {
+            alert("Você irá excluir o item");
+        } else {
+            alert("Operação foi cancelada");
+        }
+    }
+</script>
+</html>
