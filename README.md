@@ -8,8 +8,8 @@
 
 ## 💻 Sobre o Repositório : 
 
-Esse repositório foi criado com o propósito de hospedar todos os meus estudos e conhecimentos realizados do meu curso Análise e Desenvolvimento de Sistemas, da Faculdade
-Uniámerica Faculdade Descomplica Digital.
+Esse repositório foi criado com o propósito de hospedar todos os meus estudos e conhecimentos realizados do meu curso Análise e Desenvolvimento de Sistemas, da 
+Uniámerica Faculdade Descomplica Digital. Contém Módulos e exercícios práticos.
 
 ## 🚀 Módulos :
 
