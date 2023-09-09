@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Alternativa</title>
+</head>
+
+<body>
+
+        <h2>Preenche seu Currículo</h2>
+
+        <form id="funcionarioForm">
+            
+            <label for="nome">Nome :</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+    
+            <label for="nome">Qual sua Idade ? :</label>
+            <input type="number" id="number" name="number" required><br><br>
+
+            <label for="nome">Cargo Atual :</label>
+            <input type="text" id="cargo" name="cargo" required><br><br>
+
+            <label for="nome">Seu Departamento :</label>
+            <input type="text" id="departamento" name="departamento" required><br><br>
+
+            <label for="nome">Linguagem de Programação Atual :</label>
+            <input type="text" id="linguagem" name="linguagem" required><br><br>
+
+            <button type="submit">Cadastrar-se</button>
+        </form>
+
+    <div id="resultForm"></div>
+</body>
+
+
+<script>
+
+  // Criando as classes 
+  class Funcionario {
+        constructor(nome, idade, cargo) {
+            this.nome = nome;
+            this.idade = idade;
+            this.cargo = cargo;
+        }
+
+        seApresentar() {
+            console.log("Olá, eu me chamo " + this.nome + " e tenho " + this.idade + " anos ");
+        }
+
+        trabalhar() {
+            console.log("Meu cargo nessa empresa é " + this.cargo);
+        }
+    }
+
+  class Gerente extends Funcionario {
+        constructor(nome, idade, departamento) {
+            super(nome, idade, departamento);
+            this.departamento = departamento;
+        }
+
+        gerenciar() {
+            console.log("Estou gerenciando o departamento " + this.departamento);
+        }
+    }
+
+    class Desenvolvedor extends Funcionario {
+        constructor(nome, idade, linguagem) {
+            super(nome, idade, linguagem);
+            this.linguagem = linguagem;
+        }
+
+        programar() {
+            console.log("Desenvolvo na linguagem " + this.linguagem);
+        }
+    }
+
+    // Tratamento de erro
+    function exibirErro(mensagem) {
+        const resultForm = document.getElementById('resultForm');
+        resultForm.innerText= `Erro: ${ mensagem }`;
+    }
+
+    const funcionarioForm = document.getElementById('funcionarioForm');
+        funcionarioForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            try {
+                const nome = document.getElementById('nome').value;
+                const idade = parseInt(document.getElementById('idade').value);
+                const cargo = document.getElementById('cargo').value;
+                const departamento = document.getElementById('departamento').value;
+                const linguagem = document.getElementById('linguagem').value;
+
+                let funcionario;
+
+                if (cargo === 'Gerente') {
+                    if (!departamento) {
+                        throw new Error("O departamento é obrigatório para os gerentes.");
+                    }
+
+                    funcionario = new Gerente(nome, idade, cargo, departamento);
+
+                } else if (cargo === 'Desenvolvedor') {
+
+                    if (!linguagem) {
+                        throw new Error("A linguagem é obrigatória para os desenvolvedores.");
+                    }
+
+                    funcionario = new Desenvolvedor(nome, idade, cargo, linguagem);
+
+                } else {
+                    throw new Error('Cargo inválido.');
+                }
+
+                const resultForm = document.getElementById('resultForm');
+                resultForm.innerHTML = `
+                    <p>${funcionario.seApresentar()}</p>
+                    <p>${funcionario.trabalhar()}</p>
+                    <p>${funcionario instanceof Gerente ? funcionario.gerenciar() : ''}</p>
+                    <p>${funcionario instanceof Desenvolvedor ? funcionario.programar() : ''}</p>
+                `;
+
+            } catch (error) {
+                exibirErro(error.message);
+            }
+        });
+</script>
+</html>

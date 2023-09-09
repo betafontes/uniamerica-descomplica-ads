@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Itens</title>
+</head>
+
+<body>
+    <h1>Lista de Itens</h1>
+
+    <input type="text" id="item" placeholder="Digite um item">
+
+    <button onclick="adicionarItem()">Adicionar</button>
+
+    <ul id="lista"></ul>
+</body>
+
+
+<script>
+
+    function adicionarItem() {
+        var item = document.getElementById('item').value;
+        var lista = document.getElementById('lista');
+
+        // verificando se o campo de texto não está vazio
+        if (item !== "") {
+            var novoItem = document.createElement('li');
+
+            novoItem.appendChild(document.createTextNode(item)); /* adiciona o texto do campo 
+            de texto ao novo elemento <li> */
+
+            lista.appendChild(novoItem); // adiciona o novo elemento à lista
+            document.getElementById('item').value = "";
+            
+        }
+    }
+</script>
+</html>
+
