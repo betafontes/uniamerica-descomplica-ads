@@ -31,6 +31,7 @@ Uniámerica Faculdade Descomplica Digital. Contém Módulos e exercícios práti
 - JavaScript
 - BootStrap
 - Git
+- Json
 
 <hr>
 
